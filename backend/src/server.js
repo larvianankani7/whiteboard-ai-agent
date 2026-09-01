@@ -5,8 +5,16 @@ require("dotenv").config();
 const aiRoutes = require("./routes/aiRoutes");
 
 const app = express();
-
-app.use(cors());
+const cors = require("cors");
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://whiteboard-ai-agent-frontend.vercel.app",
+    ],
+    methods: ["GET", "POST"],
+  })
+);
 app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
