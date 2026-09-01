@@ -5,7 +5,6 @@ require("dotenv").config();
 const aiRoutes = require("./routes/aiRoutes");
 
 const app = express();
-const cors = require("cors");
 app.use(
   cors({
     origin: [
